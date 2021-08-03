@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation_graph"
+    app:startDestination="@id/surveyLocationFragment">
+
+    <fragment
+        android:id="@+id/surveyLocationFragment"
+        android:name="com.saifkhan.ripl.ui.fragments.SurveyLocalitySelectionFragment.SurveyLocationFragment"
+        android:label="SurveyLocationFragment" >
+        <action
+            android:id="@+id/action_surveyLocationFragment_to_residentInformationFragment"
+            app:destination="@id/residentInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/residentInformationFragment"
+        android:name="com.saifkhan.ripl.ui.fragments.residentFragment.ResidentInformationFragment"
+        android:label="ResidentInformationFragment" />
+</navigation>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">PopulationByLocality</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="skip">skip</string>
+    <string name="create_your_profile">Create Your Profile</string>
+    <string name="full_name">Full Name</string>
+    <string name="username">Username</string>
+    <string name="add_photo">Add photo</string>
+    <string name="tap_to_add_photo">Tap to add photo</string>
+    <string name="location_settings">Location Settings</string>
+    <string name="no_location_no_exciting_content">No Location = No Exciting Content</string>
+    <string name="enable_location">Enable Location</string>
+    <string name="push_notifications">Push Notifications</string>
+    <string name="be_first_to_experience_the_latest">Be first to experience the latest!</string>
+    <string name="resend_the_sms_message">Resend the SMS message (59)</string>
+    <string name="lets_go">Lets go!</string>
+    <string name="getting_started">Getting Started</string>
+</resources>
