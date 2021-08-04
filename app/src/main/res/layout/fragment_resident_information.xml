@@ -93,7 +93,7 @@
                     android:layout_height="wrap_content"
                     android:text="please write serialno"
                     android:textColor="@color/selectedDrawer"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
 
                 <TextView
@@ -187,7 +187,7 @@
                     android:layout_height="wrap_content"
                     android:text="please write mother Name"
                     android:textColor="@color/selectedDrawer"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -217,7 +217,7 @@
                     android:layout_height="wrap_content"
                     android:text="please write Address"
                     android:textColor="@color/selectedDrawer"
-                    android:visibility="visible" />
+                    android:visibility="gone" />
 
 
                 <TextView
@@ -246,7 +246,7 @@
                     android:id="@+id/writePhoneNum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="please write Phone"
+                    android:text="please write mobile no"
                     android:textColor="@color/selectedDrawer"
                     android:visibility="gone" />
 
@@ -264,6 +264,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
+                    android:editable="false"
+                    android:cursorVisible="false"
                     android:background="@drawable/rectangle"
                     android:drawableTint="@android:color/black"
                     android:fontFamily="@font/raleway_regular"
@@ -354,6 +356,9 @@
                     </LinearLayout>
 
 
+
+
+
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -378,6 +383,13 @@
                     </LinearLayout>
 
                 </RelativeLayout>
+                <TextView
+                    android:id="@+id/selectGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select gender"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -389,13 +401,15 @@
                     android:textStyle="bold" />
 
 
-                <TextView
+                <EditText
                     android:id="@+id/tvMaritalStatus"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:text="Marital Status"
+                    android:hint="Marital Status"
                     android:inputType="none"
+                    android:editable="false"
+                    android:cursorVisible="false"
                     android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down"
                     android:paddingStart="15dp"
@@ -404,6 +418,15 @@
                     android:textSize="16sp"
                     android:textColor="@color/colorBlack"
                     android:fontFamily="@font/raleway_medium"/>
+
+                <TextView
+                    android:id="@+id/writeMaritalStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select marital status"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
 
                 <net.cachapa.expandablelayout.ExpandableLayout
                         android:id="@+id/expandable_layout_marital_status"
@@ -439,12 +462,12 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/tvEducation"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:text="What is your education?"
+                    android:hint="What is your education?"
                     android:inputType="none"
                     android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down"
@@ -454,6 +477,14 @@
                     android:textSize="16sp"
                     android:textColor="@color/colorBlack"
                     android:fontFamily="@font/raleway_medium"/>
+
+                <TextView
+                    android:id="@+id/selectEducation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select education"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
                 <net.cachapa.expandablelayout.ExpandableLayout
                     android:id="@+id/expandable_layout_education"
@@ -488,12 +519,12 @@
                     android:textStyle="bold" />
 
 
-                <TextView
+                <EditText
                     android:id="@+id/tvOccupation"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:text="What is your occupation?"
+                    android:hint="What is your occupation?"
                     android:inputType="none"
                     android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down"
@@ -503,6 +534,14 @@
                     android:textSize="16sp"
                     android:textColor="@color/colorBlack"
                     android:fontFamily="@font/raleway_medium"/>
+
+                <TextView
+                    android:id="@+id/selectOccupation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select occupation"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
                 <net.cachapa.expandablelayout.ExpandableLayout
                     android:id="@+id/expandable_layout_occupation"
@@ -548,6 +587,14 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
 
+                <TextView
+                    android:id="@+id/writeNoOfChildren"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write No of Children"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -570,6 +617,14 @@
                     android:inputType="text"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
+
+                <TextView
+                    android:id="@+id/writePreg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write!"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

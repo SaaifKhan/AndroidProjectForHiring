@@ -8,7 +8,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:background="#5BECE7E7"
+        android:background="@drawable/bg_dialog"
         android:layout_height="wrap_content">
 
 
@@ -25,7 +25,7 @@
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/raleway_semibold"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                 android:layout_marginStart="5dp"
                 android:fontFamily="@font/raleway_semibold"
                 android:textColor="@color/colorBlack"
-                android:textSize="18sp"/>
+                android:textSize="20sp"/>
 
             <View
                 android:layout_width="match_parent"

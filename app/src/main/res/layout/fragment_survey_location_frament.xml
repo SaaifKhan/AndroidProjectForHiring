@@ -51,12 +51,15 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/tvProvince"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:focusable="false"
+                    android:editable="false"
+                    android:cursorVisible="false"
                     android:layout_marginTop="10dp"
-                    android:text="Province"
+                    android:hint="Province"
                     android:inputType="none"
                     android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down"
@@ -67,11 +70,19 @@
                     android:textColor="@color/colorBlack"
                     android:fontFamily="@font/raleway_medium"/>
 
+                <TextView
+                    android:id="@+id/selectProvince"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select province name"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
                 <net.cachapa.expandablelayout.ExpandableLayout
                     android:id="@+id/expandable_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:el_duration="1000"
+                    app:el_duration="500"
                     app:el_expanded="false"
                     app:el_parallax="0.5">
 
@@ -103,12 +114,14 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/editTextDisctrict"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:editable="false"
+                    android:cursorVisible="false"
                     android:layout_marginTop="10dp"
-                    android:text="Disctrict"
+                    android:hint="Disctrict"
                     android:inputType="none"
                     android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down"
@@ -119,11 +132,19 @@
                     android:textColor="@color/colorBlack"
                     android:fontFamily="@font/raleway_medium"/>
 
+                <TextView
+                    android:id="@+id/selectDistrict"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select district"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
                 <net.cachapa.expandablelayout.ExpandableLayout
                     android:id="@+id/expandable_layout_disctrict"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:el_duration="1000"
+                    app:el_duration="500"
                     app:el_expanded="false"
                     app:el_parallax="0.5">
 
@@ -153,12 +174,14 @@
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <TextView
+                <EditText
                     android:id="@+id/editTextTehsils"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
-                    android:text="Tehsils"
+                    android:cursorVisible="false"
+                    android:hint="Tehsils"
+                    android:editable="false"
                     android:inputType="none"
                     android:gravity="center_vertical"
                     android:drawableRight="@drawable/ic_baseline_keyboard_arrow_down"
@@ -169,11 +192,20 @@
                     android:textColor="@color/colorBlack"
                     android:fontFamily="@font/raleway_medium"/>
 
+                <TextView
+                    android:id="@+id/selectTehsil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please select teshsil"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
+
                 <net.cachapa.expandablelayout.ExpandableLayout
                     android:id="@+id/expandable_layout_tehsils"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:el_duration="1000"
+                    app:el_duration="500"
                     app:el_expanded="false"
                     app:el_parallax="0.5">
 
