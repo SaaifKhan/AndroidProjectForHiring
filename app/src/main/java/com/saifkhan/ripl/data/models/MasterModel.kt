@@ -20,7 +20,7 @@ data class MasterModel(
         val Address: String,
         val mobileNumber: String?,
         val DateofBirth: String,
-        val Age: String?,
+        val Age: Int?,
         val Gender: String,
         val MartialStatus: String?,
         val education: String?,

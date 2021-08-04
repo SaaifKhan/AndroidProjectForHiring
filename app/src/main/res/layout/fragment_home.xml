@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.homeFragment.HomeFragment">
+
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:paddingEnd="10dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/toolbarcardView"
+            android:paddingStart="10dp"
+            android:layout_height="wrap_content">
+
+
+
+            <TextView
+                android:id="@+id/RequestTypeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:layout_centerHorizontal="true"
+                android:text="What You Want To Request For"/>
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/DonarRequest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/RequestTypeTv"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="20dp"
+                app:mrl_rippleColor="#A6000000">
+
+                <TextView
+                    android:id="@+id/btnReqeustAsAddResident"
+                    android:layout_width="200dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/btn_bckground"
+                    android:fontFamily="@font/raleway_medium"
+                    android:gravity="center"
+                    android:text="Add Resident"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/requestForReceiver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/DonarRequest"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="10dp"
+                app:mrl_rippleColor="#A6000000">
+
+                <TextView
+                    android:id="@+id/btnViewResidents"
+                    android:layout_width="200dp"
+                    android:layout_height="45dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/btn_bckground"
+                    android:fontFamily="@font/raleway_medium"
+                    android:gravity="center"
+                    android:text="View Residents"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

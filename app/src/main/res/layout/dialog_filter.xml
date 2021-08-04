@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#5BECE7E7"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="0.5dp"
+                android:background="@color/colorBlack"
+                />
+
+            <TextView
+                android:id="@+id/tvMaleDialog"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/raleway_medium"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:text="Male"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="0.2dp"
+                android:background="@color/colorBlack"
+                />
+
+            <TextView
+                android:id="@+id/tvFemale"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/raleway_medium"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:text="Female"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age Group"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/raleway_semibold"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="0.5dp"
+                android:background="@color/colorBlack"
+                />
+
+            <TextView
+                android:id="@+id/tvBelow18"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/raleway_medium"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:text="below 18"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="0.2dp"
+                android:background="@color/colorBlack"
+                />
+
+            <TextView
+                android:id="@+id/tvAbove18"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/raleway_medium"
+                android:textSize="18sp"
+                android:textColor="@color/colorBlack"
+                android:text="above 18"/>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

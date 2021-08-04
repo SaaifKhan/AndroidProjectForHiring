@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.saif.hiringproject.data.models.EducationModel
 import com.saif.hiringproject.data.models.MartialStatusModel
 import com.saif.hiringproject.data.models.OccupationModel
@@ -41,12 +44,14 @@ class ResidentInformationFragment : BaseFragment<FragmentResidentInformationBind
 
 
     val myCalendar = Calendar.getInstance()
-    val selectedGender: Int = -1
+    var selectedGender: Int = -1
+    var selectedRadioBtn: ImageView? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mViewModel.allItems.observe(this, androidx.lifecycle.Observer {
-            Log.d("Item ","${it.size}")
+            Log.d("Item ", "${it.size}")
         })
     }
 
@@ -122,15 +127,72 @@ class ResidentInformationFragment : BaseFragment<FragmentResidentInformationBind
 
             }
             val resdInfo = MasterModel(0, sharedViewModel.selectedDistrict!!.id, sharedViewModel.selectedDistrict!!.disName, sharedViewModel.selectedProvince!!.id, sharedViewModel.selectedProvince!!.prName, sharedViewModel.selectedTehsil!!.id, sharedViewModel.selectedTehsil!!.tehName,
-                    etSerialNo.text.toString().toInt(), etNameOfPerson.text.toString(), etFatherName.text.toString(), etMotherName.text.toString(), etAddress.text.toString(), etMobileNumber.text.toString(), etDateOfBirth.text.toString(), etAgeInYears.text.toString(), "0", tvMaritalStatus.text.toString(), tvEducation.text.toString(), tvOccupation.text.toString(), etChildren.text.toString(), etPreg.text.toString())
+                    etSerialNo.text.toString().toInt(), etNameOfPerson.text.toString(), etFatherName.text.toString(), etMotherName.text.toString(), etAddress.text.toString(), etMobileNumber.text.toString(), etDateOfBirth.text.toString(), etAgeInYears.text.toString().toInt(), selectedGender.toString(), tvMaritalStatus.text.toString(), tvEducation.text.toString(), tvOccupation.text.toString(), etChildren.text.toString(), etPreg.text.toString())
             mViewModel.insertItem(resdInfo)
 
 
         }
 
+
+        checkBtn1.setOnClickListener {
+            if (selectedRadioBtn != null) {
+                selectedGender = 0
+                checkBtn1.setImageDrawable(
+                        ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.ic_baseline_check_circle_24
+                        )
+                )
+                selectedRadioBtn!!.setImageDrawable(
+                        ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.ic_baseline_radio_button_unchecked_24
+                        )
+                )
+                selectedRadioBtn = checkBtn1
+            } else {
+                checkBtn1.setImageDrawable(
+                        ContextCompat.getDrawable(
+                                requireContext(),
+                                R.drawable.ic_baseline_check_circle_24
+                        )
+                )
+                selectedRadioBtn = checkBtn1
+            }
+
+            checkBtn2.setOnClickListener {
+                if (selectedRadioBtn != null) {
+                    selectedGender = 1
+                    checkBtn2.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.ic_baseline_check_circle_24
+                            )
+                    )
+                    selectedRadioBtn!!.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.ic_baseline_radio_button_unchecked_24
+                            )
+                    )
+                    selectedRadioBtn = checkBtn2
+                } else {
+                    checkBtn2.setImageDrawable(
+                            ContextCompat.getDrawable(
+                                    requireContext(),
+                                    R.drawable.ic_baseline_check_circle_24
+                            )
+                    )
+                    selectedRadioBtn = checkBtn2
+                }
+            }
+
+        }
     }
 
-    private fun intialising() {
 
-    }
+}
+
+private fun intialising() {
+
 }

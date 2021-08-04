@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation_graph"
-    app:startDestination="@id/surveyLocationFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/surveyLocationFragment"
@@ -16,5 +16,27 @@
     <fragment
         android:id="@+id/residentInformationFragment"
         android:name="com.saifkhan.ripl.ui.fragments.residentFragment.ResidentInformationFragment"
-        android:label="ResidentInformationFragment" />
+        android:label="ResidentInformationFragment" >
+        <action
+            android:id="@+id/action_residentInformationFragment_to_residentListFragment"
+            app:destination="@id/residentListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/residentListFragment"
+        android:name="com.saifkhan.ripl.ui.fragments.listWithFilterScreen.ResidentListFragment"
+        android:label="ResidentListFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.saifkhan.ripl.ui.fragments.homeFragment.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_surveyLocationFragment"
+            app:destination="@id/surveyLocationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_residentInformationFragment"
+            app:destination="@id/residentInformationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_residentListFragment"
+            app:destination="@id/residentListFragment" />
+    </fragment>
 </navigation>

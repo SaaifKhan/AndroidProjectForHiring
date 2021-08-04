@@ -87,6 +87,14 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
 
+                <TextView
+                    android:id="@+id/writeSerialNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write serialno"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="visible" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -110,6 +118,14 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
 
+                <TextView
+                    android:id="@+id/writeNameOfPerson"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write Name Of Person"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,6 +148,14 @@
                     android:inputType="text"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
+
+                <TextView
+                    android:id="@+id/writeFatherName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write Father Name"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
 
 
@@ -158,6 +182,14 @@
                     android:paddingEnd="15dp" />
 
                 <TextView
+                    android:id="@+id/writeMotherName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write mother Name"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="visible" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -178,6 +210,14 @@
                     android:inputType="text"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
+
+                <TextView
+                    android:id="@+id/writeAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write Address"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="visible" />
 
 
                 <TextView
@@ -203,6 +243,14 @@
                     android:paddingEnd="15dp" />
 
                 <TextView
+                    android:id="@+id/writePhoneNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write Phone"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -223,6 +271,14 @@
                     android:inputType="datetime"
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
+
+                <TextView
+                    android:id="@+id/writeDateofBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write Date of Birth"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
 
                 <TextView
@@ -247,6 +303,13 @@
                     android:paddingStart="15dp"
                     android:paddingEnd="15dp" />
 
+                <TextView
+                    android:id="@+id/writeAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="please write Age In years"
+                    android:textColor="@color/selectedDrawer"
+                    android:visibility="gone" />
 
                 <TextView
                     android:layout_width="wrap_content"
