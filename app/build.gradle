@@ -14,7 +14,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.bluscreativelab.mvacay"
+        applicationId "com.ripl.ira"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
