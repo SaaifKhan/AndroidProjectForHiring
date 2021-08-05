@@ -33,7 +33,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:fontFamily="@font/raleway_semibold"
-                android:text="List Screen"
+                android:text="Summary Screen"
                 android:textColor="@color/colorBlack"
                 android:textSize="16sp" />
 
@@ -55,7 +55,9 @@
             android:id="@+id/recyclerViewListOfResident"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/relativeSummary"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_above="@+id/relativeBottomCounts"
             android:layout_below="@id/relativeTOpBAr"
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -63,24 +65,46 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+
         <RelativeLayout
+            android:id="@+id/relativeBottomCounts"
+            android:layout_width="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_alignParentBottom="true"
+            android:layout_height="120dp">
+
+            <TextView
+                android:id="@+id/tvHeadingCount"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/raleway_semibold"
+                android:textSize="16sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Total Count Summary"/>
+        <LinearLayout
             android:id="@+id/relativeSummary"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/colorWhite">
+            android:layout_marginTop="5dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvHeadingCount"
+            android:orientation="horizontal"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total Summary"
                 android:textSize="18sp"
+                android:visibility="gone"
+                android:gravity="center"
                 android:fontFamily="@font/raleway_black"
                 android:layout_centerHorizontal="true"/>
 
             <LinearLayout
                 android:id="@+id/linearTotalMale"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
@@ -92,6 +116,8 @@
                     android:id="@+id/tvMale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
                     android:fontFamily="@font/raleway_medium"
                     android:text="Total Male"
                     android:textColor="@color/colorBlack"
@@ -109,7 +135,8 @@
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_centerHorizontal="true"
@@ -121,6 +148,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:fontFamily="@font/raleway_medium"
                     android:text="Total Female"
                     android:textColor="@color/colorBlack"
@@ -137,7 +165,8 @@
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_alignParentEnd="true"
@@ -151,6 +180,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/raleway_medium"
                     android:text="Khi,lhr"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/colorBlack"
                     android:textSize="18sp" />
 
@@ -159,17 +190,50 @@
                     android:layout_width="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_height="wrap_content"
+                    android:gravity="center"
                     android:fontFamily="@font/raleway_semibold"
                     android:text="20,10"
                     android:textColor="@color/colorBlack"
                     android:textSize="16sp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/raleway_medium"
+                    android:text="Total marital Status"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvCountMaritalStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:fontFamily="@font/raleway_semibold"
+                    android:text="10"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
 
 
+        </LinearLayout>
         </RelativeLayout>
-
 
     </RelativeLayout>
 </layout>

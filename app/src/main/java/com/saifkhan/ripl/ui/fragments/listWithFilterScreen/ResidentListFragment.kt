@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.saif.hiringproject.ui.fragments.SurveylocalityselectionFragment.adapter.ResidentListAdapter
 import com.saif.hiringproject.ui.fragments.onBoardingFragment.loginFragment.ResidentInformationViewModel
 import com.saif.hiringproject.ui.fragments.onBoardingFragment.loginFragment.ResidentListViewModel
@@ -19,9 +20,10 @@ import com.saifkhan.ripl.utils.DialogClass
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.dialog_filter.*
 import kotlinx.android.synthetic.main.fragment_list_with_filter_screen.*
-@AndroidEntryPoint
-class ResidentListFragment : BaseFragment<FragmentListWithFilterScreenBinding, ResidentListViewModel>() {
 
+@AndroidEntryPoint
+class ResidentListFragment :
+    BaseFragment<FragmentListWithFilterScreenBinding, ResidentListViewModel>() {
 
 
     override val layoutId: Int
@@ -35,7 +37,6 @@ class ResidentListFragment : BaseFragment<FragmentListWithFilterScreenBinding, R
     val refList = ArrayList<MasterModel>()
 
     lateinit var filterDialog: Dialog
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,24 +62,27 @@ class ResidentListFragment : BaseFragment<FragmentListWithFilterScreenBinding, R
     }
 
     private fun clickListener() {
+        imgBackRequest.setOnClickListener {
+            findNavController().popBackStack()
+        }
         imgFilter.setOnClickListener {
             filterDialog = DialogClass.filterListDialog(requireContext())
             filterDialog.tvMaleDialog.setOnClickListener {
                 refList.clear()
                 masterList.forEachIndexed { index, masterModel ->
-                  if(masterModel.Gender == "0"){
-                      refList.add(masterModel)
-                  }
-              }
+                    if (masterModel.Gender == "0") {
+                        refList.add(masterModel)
+                    }
+                }
                 filterDialog.dismiss()
                 recyclerViewListOfResident.adapter?.notifyDataSetChanged()
             }
-            
+
             filterDialog.tvFemale.setOnClickListener {
                 refList.clear()
 
                 masterList.forEachIndexed { index, masterModel ->
-                    if (masterModel.Gender == "1"){
+                    if (masterModel.Gender == "1") {
                         refList.add(masterModel)
                     }
                 }
@@ -92,7 +96,7 @@ class ResidentListFragment : BaseFragment<FragmentListWithFilterScreenBinding, R
                 refList.clear()
 
                 masterList.forEachIndexed { index, masterModel ->
-                    if (masterModel.Age!! < 18){
+                    if (masterModel.Age!! < 18) {
                         refList.add(masterModel)
                     }
                 }
@@ -105,7 +109,7 @@ class ResidentListFragment : BaseFragment<FragmentListWithFilterScreenBinding, R
             filterDialog.tvAbove18.setOnClickListener {
                 refList.clear()
                 masterList.forEachIndexed { index, masterModel ->
-                    if (masterModel.Age!! > 18){
+                    if (masterModel.Age!! > 18) {
                         refList.add(masterModel)
                     }
                 }
@@ -121,51 +125,52 @@ class ResidentListFragment : BaseFragment<FragmentListWithFilterScreenBinding, R
     }
 
     private fun intialising() {
-        recyclerViewListOfResident.adapter = ResidentListAdapter(refList,object : ResidentListAdapter.ClickItemListener{
-            override fun onClicked(position: Int) {
-            }
-        })
+        recyclerViewListOfResident.adapter =
+            ResidentListAdapter(refList, object : ResidentListAdapter.ClickItemListener {
+                override fun onClicked(position: Int) {
+                }
+            })
     }
 
-    private  fun totalCounts(list: List<MasterModel>){
+    private fun totalCounts(list: List<MasterModel>) {
         var totalMaleCount = 0
         var totalFemaleCount = 0
         var totalKhiCount = 0
         var totalLhrCount = 0
         var totalMaritalStatusForAbove14 = 0
         list.forEachIndexed { index, masterModel ->
-            if (masterModel.Gender == "0"){
+            if (masterModel.Gender == "0") {
                 //count for male
                 totalMaleCount++
 
 
             }
-            if (masterModel.Gender == "1"){
+            if (masterModel.Gender == "1") {
                 //count for female
                 totalFemaleCount++
 
 
             }
-            if (masterModel.disId == 0){
+            if (masterModel.disId == 0) {
                 //count for khi
                 totalKhiCount++
 
 
             }
-            if (masterModel.disId == 1){
+            if (masterModel.disId == 1) {
                 //count for lhr
                 totalLhrCount++
 
 
             }
-            if(masterModel.Age!! > 14 && masterModel.MartialStatus.equals("Married")){
+            if (masterModel.Age!! > 14 && masterModel.MartialStatus.equals("Married")) {
                 totalMaritalStatusForAbove14++
             }
         }
         tvTotalMaleCount.text = totalMaleCount.toString()
         tvTotalFemaleCount.text = totalFemaleCount.toString()
         tvTotalCountProvince.text = "$totalKhiCount,$totalLhrCount"
-        //
+        tvCountMaritalStatus.text = totalMaritalStatusForAbove14.toString()
 
     }
 }

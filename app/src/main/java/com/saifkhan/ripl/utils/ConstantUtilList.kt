@@ -51,6 +51,8 @@ class ConstantUtilList {
             list.add(EducationModel(5, "Intermediate/A-Levels"))
             list.add(EducationModel(6, "Unemployed"))
             list.add(EducationModel(7, "Retired"))
+            list.add(EducationModel(8, "Bachelor's Degree"))
+            list.add(EducationModel(9, "Master's Degree"))
             return list
         }
 
@@ -63,6 +65,7 @@ class ConstantUtilList {
             list.add(OccupationModel(5, "NGO employee"))
             list.add(OccupationModel(6, "Unemployed"))
             list.add(OccupationModel(7, "Retired"))
+            list.add(OccupationModel(8, "Self-employed"))
             return list
         }
     }

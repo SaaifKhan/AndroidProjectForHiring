@@ -8,4 +8,13 @@
         <item name="otpViewStyle">@style/OtpWidget.OtpView</item>
     </style>
 
+    <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
+        <!-- reference our hint & error styles -->
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColorHint">@color/colorDarkRed</item>
+        <item name="colorControlNormal">@color/colorDarkRed</item>
+        <item name="colorControlActivated">@color/colorDarkRed</item>
+        <item name="colorControlHighlight">@color/colorDarkRed</item>
+    </style>
+
 </resources>

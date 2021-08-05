@@ -1,10 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/relativeMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp">
+
+            <TextView
+                android:id="@+id/TvMainHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/raleway_regular"
+                android:text="Login to your Account"
+                android:textColor="@color/colorBlack"
+                android:textSize="25sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/phoneEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/TvMainHeading"
+                android:layout_marginTop="30dp"
+                android:background="#31E4E4E4"
+                android:hint="Login"
+                android:textColorHint="@color/colorBlack"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:boxStrokeColor="@color/colorBlue"
+                app:hintTextColor="@color/colorBlack">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/PhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_regular"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHighlight="@color/colorTextRed"
+                    android:textColorHint="@color/colorBlack"
+                    android:textColorLink="@color/colorBlack"
+                    app:boxBackgroundColor="@color/colorBlack"
+                    app:boxStrokeColor="@color/colorBlack"
+                    app:boxStrokeWidth="1dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/PWEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/phoneEditText"
+                android:layout_marginTop="30dp"
+                android:background="#23CDCDCD"
+                android:hint="Password"
+                android:textColorHint="@color/colorBlack"
+                android:theme="@style/TextInputLayoutAppearance"
+                app:boxBackgroundColor="@color/colorBlack"
+                app:boxStrokeColor="@color/colorBlack"
+                app:hintTextColor="@color/colorBlack"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/PasswordLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/raleway_regular"
+                    android:inputType=""
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/colorBlack"
+                    android:textColorHighlight="@color/colorTextRed"
+                    android:textColorHint="@color/colorBlack"
+                    android:textColorLink="@color/colorBlack"
+                    app:boxStrokeColor="@color/colorBlack"
+                    app:boxStrokeWidth="1dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/Ripple"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_below="@+id/PWEditText"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="10dp"
+                app:mrl_rippleColor="#000000">
+
+                <TextView
+                    android:id="@+id/btnContinue"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/phoneEditText"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/square_btn"
+                    android:fontFamily="@font/raleway_regular"
+                    android:gravity="center"
+                    android:text="Continue"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16sp" />
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+
+        </RelativeLayout>
 
     </RelativeLayout>
 </layout>

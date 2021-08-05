@@ -38,8 +38,20 @@ class ResidentListAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val model = list[position]
         holder.bind.tvHeading.text="NAME: "+""+model.NameOfPerson.toString()
-        holder.bind.tvCity.text="City: "+""+model.Address.toString()
+        holder.bind.tvCity.text="Gender: "+""+model.Gender.toString()
         holder.bind.tvAge.text="Age: "+""+model.Age.toString()
+
+        when(model.Gender){
+            "0" -> {
+                holder.bind.tvCity.text = "Male".toString()
+            }
+            "1" -> {
+                holder.bind.tvCity.text = "Female".toString()
+            }
+            "-1" -> {
+                holder.bind.tvCity.text = "not Specified".toString()
+            }
+        }
 
 
         holder.itemView.setOnClickListener {

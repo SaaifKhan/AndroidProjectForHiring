@@ -14,6 +14,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.saif.hiringproject.data.models.EducationModel
 import com.saif.hiringproject.data.models.MartialStatusModel
 import com.saif.hiringproject.data.models.OccupationModel
@@ -63,12 +65,31 @@ class ResidentInformationFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        intialising()
+        intializing()
         clickListener()
+    }
+
+    private fun intializing() {
+        checkEdittextWatcher(etSerialNo, writeSerialNo)
+        checkEdittextWatcher(etNameOfPerson, writeNameOfPerson)
+        checkEdittextWatcher(etFatherName, writeFatherName)
+        checkEdittextWatcher(etMotherName, writeMotherName)
+        checkEdittextWatcher(etAddress, writeAddress)
+        checkEdittextWatcher(etMobileNumber, writePhoneNum)
+        checkEdittextWatcher(etDateOfBirth, writeDateofBirth)
+        checkEdittextWatcher(etAgeInYears, writeAge)
+        checkEdittextWatcher(tvMaritalStatus, writeMaritalStatus)
+        checkEdittextWatcher(tvEducation, selectEducation)
+        checkEdittextWatcher(tvOccupation, selectOccupation)
+        checkEdittextWatcher(etChildren, writeNoOfChildren)
+        checkEdittextWatcher(etPreg, writePreg)
     }
 
     @SuppressLint("SimpleDateFormat")
     private fun clickListener() {
+        imgBackRequest.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
 
         maritalStatusAdapter = MaritalStatusAdapter(
@@ -157,38 +178,62 @@ class ResidentInformationFragment :
                                                     if (!TextUtils.isEmpty(tvOccupation.text.toString())) {
                                                         if (!TextUtils.isEmpty(etChildren.text.toString())) {
                                                             if (!TextUtils.isEmpty(etPreg.text.toString())) {
-
-                                                                val resdInfo = MasterModel(
-                                                                    0,
-                                                                    sharedViewModel.selectedDistrict!!.id,
-                                                                    sharedViewModel.selectedDistrict!!.disName,
-                                                                    sharedViewModel.selectedProvince!!.id,
-                                                                    sharedViewModel.selectedProvince!!.prName,
-                                                                    sharedViewModel.selectedTehsil!!.id,
-                                                                    sharedViewModel.selectedTehsil!!.tehName,
-                                                                    etSerialNo.text.toString()
-                                                                        .toInt(),
-                                                                    etNameOfPerson.text.toString(),
-                                                                    etFatherName.text.toString(),
-                                                                    etMotherName.text.toString(),
-                                                                    etAddress.text.toString(),
-                                                                    etMobileNumber.text.toString(),
-                                                                    etDateOfBirth.text.toString(),
-                                                                    etAgeInYears.text.toString()
-                                                                        .toInt(),
-                                                                    selectedGender.toString(),
-                                                                    tvMaritalStatus.text.toString(),
-                                                                    tvEducation.text.toString(),
-                                                                    tvOccupation.text.toString(),
-                                                                    etChildren.text.toString(),
-                                                                    etPreg.text.toString()
-                                                                )
-                                                                mViewModel.insertItem(resdInfo)
-                                                                Toast.makeText(
-                                                                    requireContext(),
-                                                                    "Information Registered Successfully!",
-                                                                    Toast.LENGTH_LONG
-                                                                ).show()
+                                                                    val resdInfo = MasterModel(
+                                                                        0,
+                                                                        sharedViewModel.selectedDistrict!!.id,
+                                                                        sharedViewModel.selectedDistrict!!.disName,
+                                                                        sharedViewModel.selectedProvince!!.id,
+                                                                        sharedViewModel.selectedProvince!!.prName,
+                                                                        sharedViewModel.selectedTehsil!!.id,
+                                                                        sharedViewModel.selectedTehsil!!.tehName,
+                                                                        etSerialNo.text.toString()
+                                                                            .toInt(),
+                                                                        etNameOfPerson.text.toString(),
+                                                                        etFatherName.text.toString(),
+                                                                        etMotherName.text.toString(),
+                                                                        etAddress.text.toString(),
+                                                                        etMobileNumber.text.toString(),
+                                                                        etDateOfBirth.text.toString(),
+                                                                        etAgeInYears.text.toString()
+                                                                            .toInt(),
+                                                                        selectedGender.toString(),
+                                                                        tvMaritalStatus.text.toString(),
+                                                                        tvEducation.text.toString(),
+                                                                        tvOccupation.text.toString(),
+                                                                        etChildren.text.toString(),
+                                                                        etPreg.text.toString()
+                                                                    )
+                                                                    mViewModel.insertItem(resdInfo)
+                                                                    Snackbar.make(
+                                                                        requireView(),
+                                                                        "Information Submitted Successfully!!",
+                                                                        Snackbar.LENGTH_SHORT
+                                                                    ).setAction("Action", null).show()
+                                                                    etSerialNo.setText("")
+                                                                    etNameOfPerson.setText("")
+                                                                    etFatherName.setText("")
+                                                                    etMotherName.setText("")
+                                                                    etAddress.setText("")
+                                                                    etMobileNumber.setText("")
+                                                                    etDateOfBirth.setText("")
+                                                                    etAgeInYears.setText("")
+                                                                    tvMaritalStatus.setText("")
+                                                                    tvEducation.setText("")
+                                                                    tvOccupation.setText("")
+                                                                    etChildren.setText("")
+                                                                    etPreg.setText("")
+                                                                    checkBtn1.setImageDrawable(
+                                                                        ContextCompat.getDrawable(
+                                                                            requireContext(),
+                                                                            R.drawable.ic_baseline_radio_button_unchecked_24
+                                                                        )
+                                                                    )
+                                                                    checkBtn2.setImageDrawable(
+                                                                        ContextCompat.getDrawable(
+                                                                            requireContext(),
+                                                                            R.drawable.ic_baseline_radio_button_unchecked_24
+                                                                        )
+                                                                    )
 
                                                             } else {
                                                                 setErrorMessage(
@@ -303,7 +348,7 @@ class ResidentInformationFragment :
                 )
                 selectedRadioBtn = checkBtn1
             }
-
+        }
             checkBtn2.setOnClickListener {
                 if (selectedRadioBtn != null) {
                     selectedGender = 1
@@ -331,7 +376,6 @@ class ResidentInformationFragment :
                 }
             }
 
-        }
     }
 
 
@@ -345,6 +389,8 @@ private fun intialising() {
 fun setErrorMessage(textView: TextView, editText: EditText, context: Context) {
     textView.visibility = View.VISIBLE
     editText.background = ContextCompat.getDrawable(context, R.drawable.error_drawable)
+    editText.requestFocus()
+
 }
 
 

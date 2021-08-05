@@ -6,5 +6,28 @@
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="selectedDrawer">#FC8074</color>
+    <color name="colorGrey">#9C9999</color>
+    <color name="colorText">#000000</color>
+    <color name="colorTextRed">#BA0C2F</color>
+    <color name="colorDarkRed">#FF1746</color>
+    <color name="colorHint">#C6C6C6</color>
+    <color name="colorLightTextColor">#EDC2CB</color>
+    <color name="colorTransparent">#00FFFFFF</color>
+    <color name="colorBlue">#0A80FE</color>
+    <color name="colorLightBlue">#DA086ACF</color>
+    <color name="colorPresent">#DA086ACF</color>
+    <color name="colorTextDarkGray">#484848</color>
+    <color name="colorTextLightGray">#AAAAAA</color>
+    <color name="colorSperator">#E3E3E3</color>
+    <color name="colorIcon">#89C2FE</color>
+    <color name="colorTextBlack">#111111</color>
+    <color name="colorSeparator">#d1d1d1</color>
+    <color name="colorRestDay">#AABCD4</color>
+    <color name="colorAbsent">#E47F7F</color>
+    <color name="colorCasualLeave">#89E287</color>
+    <color name="colorShortLeave">#86C584</color>
+    <color name="colorHoliday">#EAA254</color>
+    <color name="colorEarlyOut">#94B309</color>
+    <color name="colorAbsent2">#FD0000</color>
 
 </resources>
